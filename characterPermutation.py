@@ -2,7 +2,7 @@
 # Author : Grace M. Rodriguez
 # CCOM5035: Dr. Yiannis Koutis
 # Assigment 4
-# Receive help from Jonathan Medina, 
+# Received help from Jonathan Medina, https://github.com/Jom901
 
 #This was more and assigment problem, but it was interesting noverthless.
 # Problem: Using your favorite language, write a program that takes as input an array of distinct characters 
