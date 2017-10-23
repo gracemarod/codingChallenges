@@ -18,6 +18,7 @@ YES
 NO
 YES
 
+Coding challenge recovered from https://www.hackerrank.com/challenges/ctci-balanced-brackets
 '''
 #Make the Stack. Can be done with a simple list but it's good to practice Classes
 class Stack:
