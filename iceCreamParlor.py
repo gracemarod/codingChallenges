@@ -29,3 +29,5 @@ for i in range(0, len(a)):
 for j in result:
     print j,
 print
+
+#Since we're only going trough the list and hash once, this gives a runtime of O(n).
