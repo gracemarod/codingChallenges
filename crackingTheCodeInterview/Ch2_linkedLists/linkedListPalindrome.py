@@ -18,7 +18,7 @@ class Node():
 	def setNext(self,newNext):
 		self.next = newNext
 
-
+#Class for linked list
 class UnorderedList():
 	def __init__(self):
 		self.head = None
@@ -26,6 +26,7 @@ class UnorderedList():
 	def isEmpty(self):
 		return self.head == None
 
+#Function to add more nodes
 	def add(self,item):
 		temp = Node(item)
 		temp.setNext(self.head)
@@ -39,6 +40,7 @@ class UnorderedList():
 			current = current.getNext()
 		return count
 
+#Certain for a specific node
 	def search(self,item):
 		current = self.head
 		found = False
@@ -64,11 +66,15 @@ class UnorderedList():
 		else:
 			prev.setNext(current.getNext())
 
+
 	def printList(self):
 		curr = self.head
 		while curr:
 			print curr.getData(),
 			curr = curr.getNext()
+
+#Checks if the linked list is a palindrome, by attaching all the strings to an array
+#and comparing the original array with the reversed array
 
 	def isPalindrome(self):
 		node = self.head
@@ -78,27 +84,36 @@ class UnorderedList():
 			arr.append(node.getData())
 			node = node.getNext()
 
-		return self.isPalindromeList(arr)
+		if self.isPalindromeList(arr):
+			self.printList(), 
+			print "is a palindrome."
+		else:
+			self.printList(),
+			print "is NOT a palindrome."
 
 	def isPalindromeList(self,string):
 		return string == string[::-1]
 
 
 
-myList = UnorderedList()
-myList.add("b")
-myList.add("i")
-myList.add("t")
-myList.add("c")
-myList.add("h")
+list1 = UnorderedList()
 
-# myList.printList()
-if myList.isPalindrome():
-	myList.printList(),
-	print "is a palindrome."
-else:
-	myList.printList(), 
-	print "is NOT a palindrome."
-# myList.reverseList()
-# print
-# myList.printList()
+#The last added node is going to be the head, so in the case of a string, 
+#the last character in the string is added first and the first char of the string
+#is added first
+list1.add("r")
+list1.add("a")
+list1.add("d")
+list1.add("a")
+list1.add("r")
+
+list1.isPalindrome()
+
+list2 = UnorderedList()
+list2.add("l")
+list2.add("l")
+list2.add("a")
+list2.add("b")
+
+list2.isPalindrome()
+
