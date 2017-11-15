@@ -1,5 +1,6 @@
 '''2.6 Implement a function to check if a linked list is a Palindrome.'''
 
+# Create the node
 class Node():
 	def __init__(self,initdata):
 		self.data = initdata
@@ -17,15 +18,19 @@ class Node():
 	def setNext(self,newNext):
 		self.next = newNext
 
+
 class UnorderedList():
 	def __init__(self):
 		self.head = None
+
 	def isEmpty(self):
 		return self.head == None
+
 	def add(self,item):
 		temp = Node(item)
 		temp.setNext(self.head)
 		self.head=temp
+
 	def size(self):
 		current = self.head
 		count = 0 
@@ -33,6 +38,7 @@ class UnorderedList():
 			count +=1
 			current = current.getNext()
 		return count
+
 	def search(self,item):
 		current = self.head
 		found = False
@@ -42,6 +48,7 @@ class UnorderedList():
 			else:
 				current = current.getNext()
 		return found
+
 	def remove(self,item):
 		current = self.head
 		prev = None
@@ -56,32 +63,42 @@ class UnorderedList():
 			self.head = current.getNext()
 		else:
 			prev.setNext(current.getNext())
+
 	def printList(self):
 		curr = self.head
 		while curr:
-			print curr.getData()
+			print curr.getData(),
 			curr = curr.getNext()
-	def getToMiddle(self):
-		slow_ptr = self.head
-		fast_ptr = self.head
 
-		if fast_ptr != None:
-			while (fast_ptr != None and fast_ptr.getNext() != None):
-				fast_ptr = fast_ptr.getNext().getNext()
-				slow_ptr = slow_ptr.getNext()
+	def isPalindrome(self):
+		node = self.head
+		arr = []
 
-			if fast_ptr != None:
-				midnode = slow_ptr
-				slow_ptr = slow_ptr.getNext()
+		while node:
+			arr.append(node.getData())
+			node = node.getNext()
 
-		print "The middle Node is", slow_ptr.getData()
+		return self.isPalindromeList(arr)
+
+	def isPalindromeList(self,string):
+		return string == string[::-1]
+
+
 
 myList = UnorderedList()
-myList.add("r")
-myList.add("a")
-myList.add("d")
-myList.add("a")
-myList.add("r")
+myList.add("b")
+myList.add("i")
+myList.add("t")
+myList.add("c")
+myList.add("h")
 
-myList.printList()
-myList.getToMiddle()
+# myList.printList()
+if myList.isPalindrome():
+	myList.printList(),
+	print "is a palindrome."
+else:
+	myList.printList(), 
+	print "is NOT a palindrome."
+# myList.reverseList()
+# print
+# myList.printList()
