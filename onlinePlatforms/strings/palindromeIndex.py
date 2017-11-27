@@ -1,7 +1,9 @@
 '''Given a string, S , of lowercase letters, determine the index of the character whose removal 
 will make  a palindrome. If  is already a palindrome or no such character exists, then print S. 
 There will always be a valid solution, and any correct answer is acceptable. 
-For example, if  "bcbc", we can either remove 'b' at index  or 'c' at index .'''
+For example, if  "bcbc", we can either remove 'b' at index  or 'c' at index .
+problem recovered from https://www.hackerrank.com/challenges/palindrome-index/problem'''
+
 
 import sys
 
