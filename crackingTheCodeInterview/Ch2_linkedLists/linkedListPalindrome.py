@@ -117,3 +117,11 @@ list2.add("b")
 
 list2.isPalindrome()
 
+nums1 = UnorderedList()
+nums1.add(1)
+nums1.add(2)
+nums1.add(3)
+
+print nums1.remove(5)
+print 
+
